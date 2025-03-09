@@ -5,11 +5,15 @@
         public static void Main(string[] args)
         {
             var person = PersonBuilder.Create()
-               .Name("John Doe")
-               .Age(30)
+                .Age(30)
+                .Name("John Doe")
+
                .Address(address => address
                    .Street("Main St")
-                   .City("Springfield"))
+                   .City("Springfield")
+                   .BuildAndSetParent()
+                   )
+              
                .Build();
      
             Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
