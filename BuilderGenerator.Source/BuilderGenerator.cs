@@ -193,9 +193,15 @@ namespace BuilderGenerator.Runtime
                     }
                 }
 
-                using (builder.Indent($"public TParent BuildAndSetParent(Expression<Func<{targetType.ToDisplayString()}, TParent>> parentSelector)"))
+                using (builder.Indent($"public TParent BuildAndSetParent<TProperty>(Expression<Func<{targetType.ToDisplayString()}, TProperty>> parentSelector) where TProperty : class"))
                 {
-                    builder.AppendLine("var propertyInfo = (PropertyInfo)((MemberExpression)parentSelector.Body).Member;");
+                    builder.AppendLine("var memberExpr = (MemberExpression)parentSelector.Body;");
+                    builder.AppendLine("var propertyInfo = memberExpr.Member as PropertyInfo;");
+                    builder.AppendLine("if (propertyInfo == null)");
+                    builder.AppendLine("{");
+                    builder.AppendLine("    var interfaceType = memberExpr.Member.DeclaringType;");
+                    builder.AppendLine("    propertyInfo = interfaceType.GetProperty(memberExpr.Member.Name);");
+                    builder.AppendLine("}");
                     builder.AppendLine("propertyInfo.SetValue(_instance, _parent);");
                     builder.AppendLine("return _parent;");
                 }
@@ -206,8 +212,6 @@ namespace BuilderGenerator.Runtime
                 }
             }
         }
-
-
 
     }
 }
