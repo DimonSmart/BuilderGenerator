@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderGenerator.Source", "BuilderGenerator.Source\BuilderGenerator.Source.csproj", "{A3B4B761-4F62-40E9-B484-3EF9A05F4A2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DimonSmart.BuilderGenerator.Source", "DimonSmart.BuilderGenerator.Source\DimonSmart.BuilderGenerator.Source.csproj", "{A3B4B761-4F62-40E9-B484-3EF9A05F4A2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderGenerator.Tests", "BuilderGenerator.Tests\BuilderGenerator.Tests.csproj", "{1C2B4BC4-D9E1-451B-BE81-9A4DA58AF0DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DimonSmart.BuilderGenerator.Tests", "DimonSmart.BuilderGenerator.Tests\DimonSmart.BuilderGenerator.Tests.csproj", "{1C2B4BC4-D9E1-451B-BE81-9A4DA58AF0DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderGenerator.Sample", "BuilderGenerator.Sample\BuilderGenerator.Sample.csproj", "{E780676C-991E-4CB9-89FD-8521E8F61E5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DimonSmart.BuilderGenerator.Sample", "DimonSmart.BuilderGenerator.Sample\DimonSmart.BuilderGenerator.Sample.csproj", "{E780676C-991E-4CB9-89FD-8521E8F61E5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

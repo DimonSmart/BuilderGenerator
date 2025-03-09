@@ -18,8 +18,4 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BuilderGenerator.Source\BuilderGenerator.Source.csproj" />
-  </ItemGroup>
-
 </Project>
