@@ -1,9 +1,5 @@
-﻿namespace BuilderGenerator.Sample.Tests
+﻿namespace DimonSmart.BuilderGenerator.Tests
 {
-
-    namespace BuilderGenerator.Sample
-    {
-        public interface IPerson
-        { }
-    }
+    public interface IPerson
+    { }
 }

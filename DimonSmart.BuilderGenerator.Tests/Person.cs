@@ -1,14 +1,12 @@
-﻿namespace BuilderGenerator.Sample.Tests
-{
+﻿using BuilderGenerator.Runtime;
 
-    namespace BuilderGenerator.Sample
+namespace DimonSmart.BuilderGenerator.Tests
+{
+    [GenerateBuilder]
+    public class Person : IPerson
     {
-        [GenerateBuilder]
-        public class Person : IPerson
-        {
-            public string? Name { get; set; }
-            public int Age { get; set; }
-            public Address? Address { get; set; }
-        }
+        public string? Name { get; set; }
+        public int Age { get; set; }
+        public Address? Address { get; set; }
     }
 }

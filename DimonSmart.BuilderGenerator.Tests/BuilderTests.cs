@@ -1,12 +1,5 @@
-﻿using Xunit;
-
-namespace BuilderGenerator.Sample.Tests
+﻿namespace DimonSmart.BuilderGenerator.Tests
 {
-
-    namespace BuilderGenerator.Sample
-    {
-    }
-
     public class BuilderTests
     {
         [Fact]
