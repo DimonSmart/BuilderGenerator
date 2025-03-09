@@ -2,8 +2,12 @@
 
 namespace BuilderGenerator.Sample
 {
+    public interface IPerson
+    { }
+
+
     [GenerateBuilder]
-    public class Person
+    public class Person : IPerson
     {
         public string? Name { get; set; }
         public int Age { get; set; }
@@ -15,6 +19,6 @@ namespace BuilderGenerator.Sample
     {
         public string? Street { get; set; }
         public string? City { get; set; }
-        public Person? Person { get; set; }
+        public IPerson? Person { get; set; }
     }
 }
