@@ -1,4 +1,5 @@
-﻿namespace BuilderGenerator.Sample
+﻿
+namespace BuilderGenerator.Sample
 {
     public class Program
     {
@@ -11,7 +12,7 @@
                .Address(address => address
                    .Street("Main St")
                    .City("Springfield")
-                   .BuildAndSetParent()
+                   .BuildAndSetParent(i => i.Person)
                    )
               
                .Build();
