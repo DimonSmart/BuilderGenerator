@@ -13,7 +13,7 @@ namespace BuilderGenerator.Source
     {
         private const string AttributeSource = @"
 using System;
-namespace BuilderGenerator.Runtime
+namespace DimonSmart.BuilderGenerator.Runtime
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public sealed class GenerateBuilderAttribute : Attribute
@@ -58,7 +58,7 @@ namespace BuilderGenerator.Runtime
                     }
 
                     var hasAttribute = classSymbol.GetAttributes().Any(ad =>
-                        ad.AttributeClass?.ToDisplayString() == "BuilderGenerator.Runtime.GenerateBuilderAttribute" ||
+                        ad.AttributeClass?.ToDisplayString() == "DimonSmart.BuilderGenerator.Runtime.GenerateBuilderAttribute" ||
                         ad.AttributeClass?.Name == "GenerateBuilderAttribute");
 
                     if (!hasAttribute)
@@ -70,7 +70,7 @@ namespace BuilderGenerator.Runtime
                     ITypeSymbol targetType = classSymbol;
                     foreach (var attr in classSymbol.GetAttributes())
                     {
-                        if (attr.AttributeClass?.ToDisplayString() == "BuilderGenerator.Runtime.GenerateBuilderAttribute" ||
+                        if (attr.AttributeClass?.ToDisplayString() == "DimonSmart.BuilderGenerator.Runtime.GenerateBuilderAttribute" ||
                             attr.AttributeClass?.Name == "GenerateBuilderAttribute")
                         {
                             foreach (var namedArg in attr.NamedArguments)

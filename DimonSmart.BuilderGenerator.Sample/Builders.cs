@@ -1,6 +1,6 @@
-﻿using BuilderGenerator.Runtime;
+﻿using DimonSmart.BuilderGenerator.Runtime;
 
-namespace BuilderGenerator.Sample
+namespace DimonSmart.BuilderGenerator.Sample
 {
     public interface IPerson
     { }

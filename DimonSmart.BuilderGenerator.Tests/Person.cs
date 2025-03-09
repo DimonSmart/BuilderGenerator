@@ -1,4 +1,4 @@
-﻿using BuilderGenerator.Runtime;
+﻿using DimonSmart.BuilderGenerator.Runtime;
 
 namespace DimonSmart.BuilderGenerator.Tests
 {

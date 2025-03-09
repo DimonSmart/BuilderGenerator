@@ -7,7 +7,7 @@
 		<LangVersion>9.0</LangVersion>
 
 		<!-- Important for Source Generator -->
-		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<IncludeBuildOutput>true</IncludeBuildOutput>
 		<IsRoslynComponent>true</IsRoslynComponent>
 		<OutputItemType>Analyzer</OutputItemType>
 		<NoWarn>$(NoWarn);NU5128</NoWarn>
@@ -35,10 +35,14 @@
 
 	</PropertyGroup>
 
+    <ItemGroup>
+        <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" />
+    </ItemGroup>
+
 	<ItemGroup>
 		<None Include="..\README.md" Pack="True" PackagePath="/" />
 		<None Include="BuilderGeneratorIcon.png" Pack="True" PackagePath="/" />
-	</ItemGroup>
+    </ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3" PrivateAssets="all">
