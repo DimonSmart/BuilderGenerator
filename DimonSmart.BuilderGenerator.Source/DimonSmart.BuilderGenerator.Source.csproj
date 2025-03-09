@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<!-- Basic settings -->
+		<Configuration>Release</Configuration>
+		<IsPackable>true</IsPackable>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+
+		<!-- Important for Source Generator -->
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<IsRoslynComponent>true</IsRoslynComponent>
+		<OutputItemType>Analyzer</OutputItemType>
+		<NoWarn>$(NoWarn);NU5128</NoWarn>
+
+		<!-- NuGet package metadata -->
+		<Title>BuilderGenerator</Title>
+		<Description>Generate builder classes via source generation. Simplifies object creation with Builder pattern.</Description>
+		<Authors>DimonSmart</Authors>
+		<Company>DimonSmart</Company>
+		<PackageId>DimonSmart.BuilderGenerator</PackageId>
+		<PackageProjectUrl>https://github.com/DimonSmart/BuilderGenerator</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/DimonSmart/BuilderGenerator</RepositoryUrl>
+		<PackageIcon>BuilderGeneratorIcon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>Builder;Generator;SourceGenerator</PackageTags>
+		<PackageLicenseExpression>0BSD</PackageLicenseExpression>
+
+		<!-- Package generation on build, deterministic build -->
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Deterministic>true</Deterministic>
+
+		<!-- Example of a dynamic version format: 1.YYMMDD.HHmm -->
+		<PackageVersion>1.$([System.DateTime]::UtcNow.ToString("yyMdd")).$([System.DateTime]::UtcNow.ToString("HHmm"))</PackageVersion>
+		<Version>1.$([System.DateTime]::UtcNow.ToString("yyMdd")).$([System.DateTime]::UtcNow.ToString("HHmm"))</Version>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md" Pack="True" PackagePath="/" />
+		<None Include="BuilderGeneratorIcon.png" Pack="True" PackagePath="/" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3" PrivateAssets="all">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.1" PrivateAssets="all" />
+	</ItemGroup>
+</Project>
