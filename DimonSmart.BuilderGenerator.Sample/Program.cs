@@ -1,5 +1,4 @@
-﻿
-namespace BuilderGenerator.Sample
+﻿namespace DimonSmart.BuilderGenerator.Sample
 {
     public class Program
     {
