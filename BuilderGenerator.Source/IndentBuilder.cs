@@ -36,15 +36,5 @@ namespace BuilderGenerator.Source
                 AppendLine("}");
             }
         }
-
-
-
-
-
-       
-
-
-
-       
     }
 }

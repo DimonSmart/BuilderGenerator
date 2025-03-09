@@ -1,11 +1,10 @@
-﻿using System.Collections.Immutable;
-using System.Linq;
-using System.Text;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.Text;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
+using Microsoft.CodeAnalysis.Text;
+using System.Collections.Immutable;
+using System.Linq;
+using System.Text;
 
 namespace BuilderGenerator.Source
 {
@@ -54,14 +53,18 @@ namespace BuilderGenerator.Runtime
                 {
                     var model = compilation.GetSemanticModel(classDecl.SyntaxTree);
                     if (model.GetDeclaredSymbol(classDecl) is not INamedTypeSymbol classSymbol)
+                    {
                         continue;
+                    }
 
                     var hasAttribute = classSymbol.GetAttributes().Any(ad =>
                         ad.AttributeClass?.ToDisplayString() == "BuilderGenerator.Runtime.GenerateBuilderAttribute" ||
                         ad.AttributeClass?.Name == "GenerateBuilderAttribute");
 
                     if (!hasAttribute)
+                    {
                         continue;
+                    }
 
                     // Определяем тип для генерации билдера.
                     ITypeSymbol targetType = classSymbol;
@@ -73,7 +76,9 @@ namespace BuilderGenerator.Runtime
                             foreach (var namedArg in attr.NamedArguments)
                             {
                                 if (namedArg.Key == "TargetType" && namedArg.Value.Value is INamedTypeSymbol ts)
+                                {
                                     targetType = ts;
+                                }
                             }
                         }
                     }
