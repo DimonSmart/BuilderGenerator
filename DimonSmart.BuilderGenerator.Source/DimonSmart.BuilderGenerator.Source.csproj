@@ -37,7 +37,19 @@
 
     <ItemGroup>
         <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" />
+		
     </ItemGroup>
+
+	<ItemGroup>
+		<!-- Для генератора (analyzers) -->
+		<None Include="$(PkgDimonSmart_IndentedStringBuilder)\lib\netstandard2.0\DimonSmart.IndentedStringBuilder.dll"
+			  Pack="true" PackagePath="analyzers/dotnet/cs" />
+		<!-- Для runtime (lib) -->
+		<None Include="$(PkgDimonSmart_IndentedStringBuilder)\lib\netstandard2.0\DimonSmart.IndentedStringBuilder.dll"
+			  Pack="true" PackagePath="lib/netstandard2.0" />
+	</ItemGroup>
+	
+	
 
 	<ItemGroup>
 		<None Include="..\README.md" Pack="True" PackagePath="/" />
@@ -45,6 +57,7 @@
     </ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="DimonSmart.IndentedStringBuilder" Version="1.25310.1557" GeneratePathProperty="true" />
 		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3" PrivateAssets="all">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
