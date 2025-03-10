@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DimonSmart.BuilderGenerator" Version="1.25309.2126" />
+    <PackageReference Include="DimonSmart.BuilderGenerator" Version="1.25310.2229" />
   </ItemGroup>
 	
 </Project>
